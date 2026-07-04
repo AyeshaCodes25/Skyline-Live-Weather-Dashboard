@@ -1,14 +1,10 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=timeGradient&height=180&section=header&text=Skyline%20—%20Live%20Weather%20Dashboard&fontSize=32&fontColor=ffffff&fontAlignY=40" alt="Skyline Banner"/>
-</p>
+# 🌤 Skyline — Live Weather Dashboard
 
-<h3 align="center">🌤 The sky outside — rendered in real time.</h3>
+**The sky outside — rendered in real time.**
 
-Skyline is a single-page weather dashboard where the background *is* the weather: a living sky that shifts color, lighting, and motion to match real conditions anywhere on Earth — down to a glowing sun or moon that arcs across the screen based on the actual sunrise and sunset times for whatever city you search.
+Skyline is a single-page weather dashboard where the background *is* the weather. Instead of a static UI with numbers on top, the entire page shifts in real time — colors, gradients, and mood — to match the actual sky of any city on Earth.
 
-<p align="center">
-  🔗 <a href="https://ayeshacodes25.github.io/Skyline-Live-Weather-Dashboard/"><b>Live Demo</b></a>
-</p>
+🔗 **Live Demo:** [ayeshacodes25.github.io/Skyline-Live-Weather-Dashboard](https://ayeshacodes25.github.io/Skyline-Live-Weather-Dashboard/)
 
 ---
 
