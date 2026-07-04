@@ -11,12 +11,12 @@ Skyline is a single-page weather dashboard where the background *is* the weather
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./s1.JPG" width="45%" />
-  <img src="./s2.JPG" width="45%" />
+  <img src="./home.JPG" width="45%" />
+  <img src="./searching.JPG" width="45%" />
 </p>
 <p align="center">
-  <img src="./s3.JPG" width="45%" />
-  <img src="./s4.JPG" width="45%" />
+  <img src="./weather.JPG" width="45%" />
+  <img src="./forecasting.JPG" width="45%" />
 </p>
 
 ---
