@@ -67,9 +67,6 @@ Most weather apps treat weather as data — a temperature, an icon, a percentage
 **Ayesha Amjad** ([@AyeshaCodes25](https://github.com/AyeshaCodes25))
 Front-End Developer & Digital Marketing Specialist
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
