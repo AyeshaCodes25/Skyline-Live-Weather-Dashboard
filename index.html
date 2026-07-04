@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyline — Live Weather Dashboard</title>
+<meta name="description" content="Skyline is a single-page weather dashboard where the background itself is the weather — a living animated sky that shifts with real conditions anywhere on Earth.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="weather-clear is-day">
+
+<div id="splash" class="splash" role="status" aria-live="polite">
+  <div class="splash-content">
+    <span class="splash-mark" aria-hidden="true">☀︎</span>
+    <h1 class="splash-title">Skyline</h1>
+    <p class="splash-tagline">The sky outside — rendered in real time.</p>
+  </div>
+</div>
+
+<div class="sky-gradient" aria-hidden="true"></div>
+<div class="sky-glow" aria-hidden="true"></div>
+<div id="celestial" class="celestial" aria-hidden="true"></div>
+<div class="horizon" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="sky-canvas" aria-hidden="true"></canvas>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">☀︎</span>
+      <span class="brand-name">Skyline</span>
+    </div>
+
+    <form id="search-form" class="search" role="search" autocomplete="off">
+      <label for="search-input" class="visually-hidden">Search for a city</label>
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search a city — Lahore, Tokyo, Reykjavík…"
+        aria-autocomplete="list"
+        aria-expanded="false"
+        aria-controls="suggestions"
+      >
+      <ul id="suggestions" class="suggestions glass" role="listbox" hidden></ul>
+    </form>
+
+    <div class="topbar-actions">
+      <button id="locate-btn" class="icon-btn" type="button" title="Use my location" aria-label="Use my current location">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="6"/></svg>
+      </button>
+      <button id="unit-toggle" class="unit-toggle" type="button" aria-label="Toggle temperature unit">
+        <span class="unit-c active">°C</span>
+        <span class="unit-sep">/</span>
+        <span class="unit-f">°F</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Loading -->
+    <div id="loading-state" class="state-panel" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Reading the sky…</p>
+    </div>
+
+    <!-- Error -->
+    <div id="error-state" class="state-panel" hidden>
+      <div class="state-icon" aria-hidden="true">⚠</div>
+      <h2 id="error-title">Something went wrong</h2>
+      <p id="error-message">Please try again.</p>
+    </div>
+
+    <!-- Empty -->
+    <div id="empty-state" class="state-panel">
+      <div class="state-icon" aria-hidden="true">🌤</div>
+      <h2>Bring a sky to life</h2>
+      <p>Search any city above, or share your location, and the whole page will shift to match its weather in real time.</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard" hidden>
+
+      <section class="hero-card glass">
+        <div class="hero-location">
+          <h1 id="city-name">—</h1>
+          <p id="local-time">—</p>
+        </div>
+
+        <div class="hero-readout">
+          <span id="hero-icon" class="hero-icon" aria-hidden="true">☀</span>
+          <span class="hero-temp"><span id="temp-value">—</span><span class="deg">°</span></span>
+          <div class="hero-meta">
+            <p id="condition-text">—</p>
+            <p id="feels-like">—</p>
+            <p id="hi-lo">—</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-grid">
+        <div class="detail-chip glass">
+          <span class="detail-label">Humidity</span>
+          <span id="detail-humidity" class="detail-value">—</span>
+        </div>
+        <div class="detail-chip glass">
+          <span class="detail-label">Wind</span>
+          <span id="detail-wind" class="detail-value">—</span>
+        </div>
+        <div class="detail-chip glass">
+          <span class="detail-label">UV index</span>
+          <span id="detail-uv" class="detail-value">—</span>
+        </div>
+        <div class="detail-chip glass">
+          <span class="detail-label">Pressure</span>
+          <span id="detail-pressure" class="detail-value">—</span>
+        </div>
+        <div class="detail-chip glass">
+          <span class="detail-label">Sunrise</span>
+          <span id="detail-sunrise" class="detail-value">—</span>
+        </div>
+        <div class="detail-chip glass">
+          <span class="detail-label">Sunset</span>
+          <span id="detail-sunset" class="detail-value">—</span>
+        </div>
+      </section>
+
+      <section class="section-block glass">
+        <h2 class="section-title">Next 24 hours</h2>
+        <div id="hourly-scroll" class="hourly-scroll"></div>
+      </section>
+
+      <section class="section-block glass">
+        <h2 class="section-title">5-day outlook</h2>
+        <div id="daily-list" class="daily-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Skyline — built with HTML, CSS &amp; JavaScript. Weather data from <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>.</p>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
