@@ -1,22 +1,63 @@
-💫 Skyline-Live-Weather-Dashboard
-A single-page weather dashboard where the background is the weather: a living sky that shifts color, lighting, and motion to match real conditions anywhere on Earth — down to a glowing sun or moon that arcs across the screen based on the actual sunrise and sunset times for whatever city you search.
+🌤 Skyline — Live Weather Dashboard
 
-Live demo — (add your GitHub Pages link here once deployed)
+**The sky outside — rendered in real time.**
 
-Built with vanilla HTML, CSS & JavaScript — no frameworks, no build step, no API key required.
+Skyline is a responsive weather dashboard where the interface adapts to real-time weather conditions. Instead of displaying weather over a static background, the entire page changes its colors, gradients, and atmosphere to reflect the current sky of any city.
 
-Features
+🔗 **Live Demo:** [ayeshacodes25.github.io/Skyline-Live-Weather-Dashboard](https://ayeshacodes25.github.io/Skyline-Live-Weather-Dashboard/)
 
+---
 
-🔍 City search with debounced, keyboard-navigable autocomplete (Open-Meteo geocoding API)
-📍 Geolocation — one click to load the weather at your current position
-☀️🌙 A real sun/moon — rendered as a glowing disc that moves across the sky in sync with the searched location's actual sunrise/sunset times, and dims automatically under cloud, rain, storm, or snow
-🌥️ Volumetric clouds — soft-lit tops and shaded undersides instead of flat blurred shapes
-🌧️❄️⛈️ A full animated sky — a hand-rolled <canvas> particle system renders rain, snow, fog haze, night stars, and storm lightning that match the current weather code
-🌄 Horizon fade + film grain for a grounded, photographic feel rather than a flat color swatch
-🎬 Splash intro — a brief animated welcome with the app's tagline on first load
-🌡️ °C / °F toggle, saved between visits
-📊 Full dashboard — current conditions, feels-like, humidity, wind, UV index, pressure, sunrise/sunset, a scrollable 24-hour strip, and a 5-day outlook with a temperature-range bar
-💾 Persistence — last-viewed city and unit preference are remembered via localStorage
-♿ Accessible — keyboard-navigable search suggestions, visible focus states, aria labeling, and full prefers-reduced-motion support
-📱 Responsive down to small mobile screens
+## ✨ Features
+
+- **Living animated sky** — the page background dynamically reflects current conditions (clear, cloudy, rainy, etc.) instead of relying on static icons alone
+- **City search** — look up live weather for any city in the world
+- **Geolocation support** — share your location to instantly see your local sky
+- **Unit toggle** — switch seamlessly between °C and °F
+- **Detailed current conditions** — humidity, wind speed, UV index, pressure, sunrise, and sunset
+- **Next 24 hours** — hourly forecast at a glance
+- **5-day outlook** — plan ahead with an extended forecast
+- **Graceful error handling** — clear feedback if a city can't be found or data fails to load
+- **Fully responsive** — built to work smoothly across desktop and mobile
+
+## 🛠 Built With
+
+- **HTML5** — semantic structure
+- **CSS3** — animated, weather-reactive backgrounds and responsive layout
+- **JavaScript (Vanilla)** — API integration, DOM manipulation, and dynamic UI updates
+- **[Open-Meteo API](https://open-meteo.com)** — free, real-time weather and forecast data
+
+## 🚀 Getting Started
+
+To run Skyline locally:
+
+```bash
+git clone https://github.com/AyeshaCodes25/Skyline-Live-Weather-Dashboard.git
+cd Skyline-Live-Weather-Dashboard
+```
+
+Then simply open `index.html` in your browser — no build step, no dependencies, no API key required.
+
+## 📌 Why I Built This
+
+Most weather apps treat weather as data — a temperature, an icon, a percentage. Skyline treats it as an *experience*. The goal was to design an interface where the visual atmosphere of the page communicates the weather before you even read a single number, while still surfacing all the detailed metrics a weather-conscious user actually needs.
+
+## 🔮 Roadmap
+
+- Weather-based sound/ambient effects
+- Hourly precipitation probability chart
+- Saved/favorite cities
+- Dark mode refinements for night-time conditions
+
+## 👩‍💻 Author
+
+**Ayesha Amjad** ([@AyeshaCodes25](https://github.com/AyeshaCodes25))
+Front-End Developer & Digital Marketing Specialist
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub!
