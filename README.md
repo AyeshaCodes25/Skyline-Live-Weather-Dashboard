@@ -65,8 +65,7 @@ Most weather apps treat weather as data — a temperature, an icon, a percentage
 ## 👩‍💻 Author
 
 **Ayesha Amjad** ([@AyeshaCodes25](https://github.com/AyeshaCodes25))
-Front-End Developer & Digital Marketing Specialist
-
+Full-Stack Developer (Front-End Focused) & Digital Marketing Specialist
 
 ---
 
